@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Evolving Steering Behaviours (Genetic Algorithm)</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+</head>
+
+<body>
+    <div class="container mb-4 mt-4">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <!-- Title -->
+                <h1 style="font-size: 3.5rem;">
+                    <font class="text-primary">E</font>volving <font class="text-primary">S</font>teering <font
+                        class="text-primary">B</font>ehaviours <small class="text-muted"> ( Genetic Algorithm )</small>
+                </h1>
+                <h4> The goal is to create a system where autonomous steering agents evolve the behavior of eating food
+                    (+) and avoiding poison (x).These <a href="http://www.red3d.com/cwr/steer/" target="_blank">steering
+                        behaviors</a> are largely independent of the particulars of the character's means of locomotion.
+                    <a href="https://en.wikipedia.org/wiki/Genetic_algorithm" target="_blank">About
+                        Genetic Algorithm</a></h4>
+            </div>
+            <div class="col-md-6">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <!-- Population size configuration -->
+                            <h4>Starting Population</h4>
+                            <select class="custom-select" id="totpop_id"
+                                oninput="javascript: totalPopulation = parseInt(this.value);">
+                                <option selected value="4">4</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Max population size configuration -->
+                            <h4>Maximum Population</h4>
+                            <select class="custom-select" id="maxpop_id"
+                                oninput="javascript: maxPopulation = parseInt(this.value);">
+                                <option selected value="80">80</option>
+                                <option value="100">100</option>
+                                <option value="120">120</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Mutation rate -->
+                            <h4>Mutation Rate</h4>
+                            <select class="custom-select" id="mutation_rate_id"
+                                oninput="javascript: newMutationRate = parseFloat(this.value);">
+                                <option selected value="0.01">1%</option>
+                                <option value="0.05">5%</option>
+                                <option value="0.1">10%</option>
+                                <option value="0.3">30%</option>
+                                <option value="0.9">90%</option>
+                                <option value="0.99">99%</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <!-- Food and poison size configuration -->
+                            <h4>Starting Food and poison</h4>
+                            <select class="custom-select" id="nutrition_id"
+                                oninput="javascript: totalNutrition = parseInt(this.value);">
+                                <option selected value="5">5</option>
+                                <option value="8">8</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                        <!-- Start algo -->
+                        <button class="btn btn-primary" id="submit_id"
+                            onclick="javascript: this.childNodes[1].data = ' ReStart'; startAlgorithm();"
+                            type="submit"><i class="fal fa-play"></i> START</button>
+                        <div id="result_id" class="d-none">
+                            <br>
+                            <!-- Result info -->
+                            <h3 class="bold">Result</h4>
+                                <h4>Population Size <font class="text-primary" id="population_id">0</font>
+                                </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <center>
+            <canvas height="800" width="800" id="canvas" class="shadow"></canvas>
+        </center>
+        <div class="mt-2 card shadow-sm">
+            <div class="card-body">
+                <h4>Love Saroha <br>
+                    <font class="text-primary"><i class="fad fa-envelope"></i> lovesaroha1994@gmail.com</font>
+                </h4>
+                <h4>Source Code <br><a href="https://github.com/lovesaroha/Evolving-Steering-Behaviours-GA"
+                        target="_blank"><i class="fad fa-code-merge text-primary"></i>
+                        https://github.com/lovesaroha/Evolving-Steering-Behaviours-GA</a></h4>
+                <h4>Website <br><a href="https://lovesaroha.com"><i class="fad fa-link text-primary"></i>
+                        www.lovesaroha.com</a></h4>
+            </div>
+        </div>
+    </div>
+    <!-- Include script.js file -->
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
+</html>
